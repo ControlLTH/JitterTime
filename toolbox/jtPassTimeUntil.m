@@ -14,7 +14,4 @@ if T < 0
 	return
 end
 
-[A,R,Q,Qconst] = calcc2d(N.Ac,N.Rc,N.Qc,T);
-N.J = N.J + trace(Q * N.P) + Qconst;
-N.P = A * N.P * A' + R;
-N.Tsim = time;
+N = jtPassTime(N,T)
